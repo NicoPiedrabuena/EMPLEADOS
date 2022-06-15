@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Empleado {
+public class Empleado implements Comparable <Empleado> {
 	private String nombre;
 	private Integer salario;
 	private LocalDate cumpleaños;
@@ -33,5 +33,13 @@ public class Empleado {
 
 	public void setCumpleaños(LocalDate cumpleaños) {
 		this.cumpleaños = cumpleaños;
+	}
+
+	@Override
+	public int compareTo(Empleado o) {
+		if(nombre.compareTo(o.getNombre()) == 0){
+			salario.compareTo(o.getSalario());
+		}
+		return nombre.compareTo(o.getNombre());
 	}
 }

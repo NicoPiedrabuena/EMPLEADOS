@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class Sistema {
 	private String nombre;
@@ -32,6 +33,13 @@ public class Sistema {
 	public Empleado llamarEmpleado(Integer numeroEmpleado) {
 		return empleados.get(numeroEmpleado);
 		
+	}
+	
+
+	public TreeSet<Empleado> empleadosOrdenadosPorNombre() {
+		TreeSet<Empleado>lista = new TreeSet<Empleado>();
+		lista.addAll(empleados);
+		return lista;
 	}
 
 }
